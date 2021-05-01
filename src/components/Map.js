@@ -1,16 +1,14 @@
 import React from 'react';
 import Title from './Title';
-
-function preventDefault(event) {
-  event.preventDefault();
-}
+import LeafLeft from './Leafleft';
 
 export default function Map() {
-
   return (
-    <React.Fragment>
+    <>
       <Title>Explore All Endpoints</Title>
-      <p>Map</p>
-    </React.Fragment>
+      <div style={{ height: 420 + 'px', overflow: 'hidden', width: 100 + '%'}}>
+        <LeafLeft />
+      </div>
+    </>
   );
 }

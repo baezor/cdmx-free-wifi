@@ -3,6 +3,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Dashboard from './components/Dashboard';
 
+import 'leaflet/dist/leaflet.css';
+import './App.css';
+
 const darkTheme = createMuiTheme({
   palette: {
     primary: {
