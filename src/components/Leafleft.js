@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { LocationIcon } from './LocationIcon';
+import API from '../api';
 
 export default function LeafLeft(){
     return(
@@ -15,7 +16,13 @@ export default function LeafLeft(){
           zoomOffset={-1}
           accessToken={'pk.eyJ1IjoiYmFlem9yIiwiYSI6ImNrbnowaDA4ODAweXYyb25zZ3NwZzZrancifQ.kqtxLGqycOOti7WtwyZLkw'}
         />
-       
+        {API.locations.map(location => (
+          <Marker icon={LocationIcon} key={location.IDENTIFICADOR} position={location.geopoint.split(",")}>
+            <Popup>
+              {`Estado: ${location.CONECTIVIDAD}`}
+            </Popup>
+          </Marker>
+        ))}  
       </MapContainer>
     )
 }
